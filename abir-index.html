@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css" />  
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <title>Exercise</title>
+</head>
+
+<!-- Nav bar from Austin -->
+
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Home</a> <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarNav" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">New Workout <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Workout History</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a aria-disabled="true" class="nav-link disabled" href="#" tabindex="-1">Disabled</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+
+    <div class="container">
+    
+        <section class="page-content">
+            <div class="col-md-6">
+                <h2>Days</h2>
+         <div class="select">
+         <select class="is-focused" id="days">
+           <option value="monday">Monday</option>
+           <option value="tuesday">Tuesday</option>
+           <option value="wednesday">Wednesday</option>
+           <option value="thursday">Thursday</option>
+           <option value="friday">Friday</option>
+           <option value="saturday">Saturday</option>
+           <option value="sunday">Sunday</option>
+         </select>
+          </div>
+          <br>
+         </div>
+            <form id="create-form">
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <h2>Exercise</h2>
+                        <div class="select">
+                            <select class="is-focused" id="name">
+                                <option value="Bench_Press">Bench_Press</option>
+                                <option value="Bench_Press">Bench_Press</option>
+                                <option value="Bench_Press">Bench_Press</option>
+                                <option value="Bench_Press">Bench_Press</option>
+                                <option value="Bench_Press">Bench_Press</option>
+                                <option value="Bench_Press">Bench_Press</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="col-md-6">
+                   <h2>Bodypart</h2>
+            <div class="select">
+            <select class="is-focused" id="bodypart">
+              <option value="legs">Legs</option>
+              <option value="back">Back</option>
+              <option value="shoulders">Shoulders</option>
+              <option value="arms">Arms</option>
+              <option value="chest">Chest</option>
+              <option value="cardio">Cardio</option>
+            </select>
+             </div>
+            </div>
+            <br>
+
+            <div class="col" id="time"> <label for="time">Times</label>
+                <input class="input is-focused" placeholder="Enter Your Time" id="Time">
+                <div id="time-warning">
+                   
+                </div>
+            </div>
+          <br>
+
+            <div>
+                <button type="submit" class="button is-focused" id="submit">FireUp</button>
+            </div>
+
+        </section>
+    </div>
+  
+
+    
+
+</body>
+
+
+</html>
