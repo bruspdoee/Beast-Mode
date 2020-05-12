@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css" />  
+    <link rel="stylesheet" type="text/css" href="main.css">
     <script src="https://code.jquery.com/jquery.js"></script>
 
     <title>Get Beasted!</title>
@@ -13,7 +14,7 @@
 
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Home</a> <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarNav" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
@@ -26,61 +27,69 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
                 </li>
-                <li class="nav-item">
-                    <a aria-disabled="true" class="nav-link disabled" href="#" tabindex="-1">Disabled</a>
-                </li>
             </ul>
         </div>
     </nav>
     <br>
 
-    <div class="container">
-    <h3>How Long Do You Want To <span class="text-danger">BEAST!</span> For?</h3>
-    <label class="radio-inline"><input type="radio" name="workoutDuration" value="5">5 minutes</label>
-    <label class="radio-inline"><input type="radio" name="workoutDuration" value="10">10 minutes</label>
-    <label class="radio-inline"><input type="radio" name="workoutDuration" value="15">15 minutes</label>
-    <label class="radio-inline"><input type="radio" name="workoutDuration" value="20">20 minutes</label>
-    <label class="radio-inline"><input type="radio" name="workoutDuration" value="25">25 minutes</label>
-    <label class="radio-inline"><input type="radio" name="workoutDuration" value="30">30 minutes</label>
-    <label class="radio-inline"><input type="radio" name="workoutDuration" value="45">45 minutes</label>
-    <label class="radio-inline"><input type="radio" name="workoutDuration" value="60">60 minutes</label>
-    <label class="radio-inline"><input type="radio" name="workoutDuration" value="75">1 hour 15 minutes</label>
-    <label class="radio-inline"><input type="radio" name="workoutDuration" value="90">1 hour 30 minutes</label>
-</div>
-<br>
-    <div class="container muscle-group-selection">
-        <h3>Select Muscle Groups to <span class="text-danger">BEAST!</span></h3>
-        <br>
-        <h5>Upper Body</h5>
-        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="shoulders">Shoulders</label>
-        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="chest">Chest</label>
-        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="biceps">Biceps</label>
-        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="triceps">Triceps</label>
-        
-        <br><br>
-        <h5>Core</h5>
-        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="obliques">Obliques</label>
-        
-        <br><br>
-        <h5>Lower Body</h5>
-        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="hamstrings">Hamstrings</label>
-        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="glutes">Glutes</label>
-        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="outerThigh">Outer Thigh</label>
-        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="innerThigh">Inner Thigh</label>
-        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="quads">Quads</label>
-        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="calves">Calves</label>
-                   
-    </div>
 
-    <br>
-    <div class="container">
-        <div class="row">
-<div class="col text-center">
-    <input id="submitWorkoutParameters" class="bg-danger text-white btn-lg" type="submit" value="FIRE UP!">
-</div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="container">
+                <h3>How Long Do You Want To <span class="text-danger">BEAST!</span> For?</h3>
+                <select class="selectpicker">
+                    <option>5 minutes</option>
+                    <option>10 minutes</option>
+                    <option>15 minutes</option>
+                    <option>20 minutes</option>
+                    <option>25 minutes</option>
+                    <option>30 minutes</option>
+                    <option>45 minutes</option>
+                    <option>60 minutes</option>
+                    <option>1 hr 15 minutes</option>
+                    <option>1 hr 30 minutes</option>
+                  </select>
+                  
+            </div>
+            <br>
+                <div class="container muscle-group-selection">
+                    <h3>Select Muscle Groups to <span class="text-danger">BEAST!</span></h3>
+                    <br>
+                    <h5>Upper Body</h5>
+                    <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="shoulders">Shoulders</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="chest">Chest</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="biceps">Biceps</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="triceps">Triceps</label>
+                    
+                    <br><br>
+                    <h5>Core</h5>
+                    <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="obliques">Obliques</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="Back">Back</label>
+
+                    
+                    <br><br>
+                    <h5>Lower Body</h5>
+                    <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="hamstrings">Hamstrings</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="glutes">Glutes</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="outerThigh">Outer Thigh</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="innerThigh">Inner Thigh</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="quads">Quads</label>
+                    <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="calves">Calves</label>
+                               
+                </div>
+            
+                <br>
+                <div class="container">
+                    <div class="row">
+            <div class="col text-center">
+                <input id="submitWorkoutParameters" class="bg-danger text-white btn-lg" type="submit" value="FIRE UP!">
+            </div>
+                    </div>
+                </div>
         </div>
-    </div>
-
+        <div class="col-md-4"></div>
+      </div>
 
 
 </body>
