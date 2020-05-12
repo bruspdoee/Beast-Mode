@@ -1,41 +1,71 @@
-
-<h1>Nav Bar </h1>
-
-<div class="row">
-    <div class="col-1">
-      <h2>Timer</h2>
-    </div>
-
-    <div class="col-5">
-        <h2>List</h2>
-        <ul>
-            {{#each table_Name(WorkLinks)}}
-
-                    <li>
-                        <span class="border border-primary bg-light">{{id}}. {{name}}</span>
-                        <button type="button" class="btn btn-primary" data-id="{{id}}">WorkLinks_1</button>
-                    </li>
-                    <li>
-                        <span class="border border-primary bg-light">{{id}}. {{name}}</span>
-                        <button type="button" class="btn btn-primary" data-id="{{id}}">WorkLinks_2</button>
-                    </li>
-                    <li>
-                        <span class="border border-primary bg-light">{{id}}. {{name}}</span>
-                        <button type="button" class="btn btn-primary" data-id="{{id}}">WorkLinks_3</button>
-                    </li>
-                
-            {{!-- /each ends the "foreach" loop --}}
-            {{/each}}
-        </ul>
-    </div>
-
-    <div class="col-1">
-        {{!-- Space in the middle --}}
-    </div>
-
-    <div class="col-5">
-       <h2>Music Coctrol</h2>
-        </ul>
-    </div>
-
+<div class="container">
+    <h3>How Long Do You Want To <span class="text-danger">BEAST!</span> For?</h3>
+    <label class="radio-inline"><input type="radio" name="workoutDuration" value="5">5 minutes</label>
+    <label class="radio-inline"><input type="radio" name="workoutDuration" value="10">10 minutes</label>
+    <label class="radio-inline"><input type="radio" name="workoutDuration" value="15">15 minutes</label>
+    <label class="radio-inline"><input type="radio" name="workoutDuration" value="20">20 minutes</label>
+    <label class="radio-inline"><input type="radio" name="workoutDuration" value="25">25 minutes</label>
+    <label class="radio-inline"><input type="radio" name="workoutDuration" value="30">30 minutes</label>
+    <label class="radio-inline"><input type="radio" name="workoutDuration" value="45">45 minutes</label>
+    <label class="radio-inline"><input type="radio" name="workoutDuration" value="60">60 minutes</label>
+    <label class="radio-inline"><input type="radio" name="workoutDuration" value="75">1 hour 15 minutes</label>
+    <label class="radio-inline"><input type="radio" name="workoutDuration" value="90">1 hour 30 minutes</label>
 </div>
+<br>
+    <div class="container muscle-group-selection">
+        <h3>Select Muscle Groups to <span class="text-danger">BEAST!</span></h3>
+        <br>
+        <h5>Upper Body</h5>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="shoulders">Shoulders</label>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="chest">Chest</label>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="biceps">Biceps</label>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="triceps">Triceps</label>
+        
+        <br><br>
+        <h5>Core</h5>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="obliques">Obliques</label>
+        
+        <br><br>
+        <h5>Lower Body</h5>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="hamstrings">Hamstrings</label>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="glutes">Glutes</label>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="outerThigh">Outer Thigh</label>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="innerThigh">Inner Thigh</label>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="quads">Quads</label>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="calves">Calves</label>
+                   
+    </div>
+
+    <br>
+    <div class="container">
+        <div class="row">
+<div class="col text-center">
+    <input id="submitWorkoutParameters" class="bg-danger text-white btn-lg" type="submit" value="FIRE UP!">
+</div>
+        </div>
+    </div>
+
+
+
+</body>
+
+
+</html>
+
+{{!-- <script> 
+    function getWorkoutDuration() { 
+        var workoutDuration = parseInt($('input[name="workoutDuration"]:checked').serializeArray()[0].value);
+        console.log("Workout Duration: " + workoutDuration);
+    } 
+
+function getMuscleGroups() {
+    var muscleGroups = $('input[name="muscleGroup"]:checked').serializeArray().map(ele => ele.value);
+    console.log(muscleGroups);
+}
+
+    $("#submitWorkoutParameters").on("click", function(event) {
+        console.log("FIRE UP!");
+    getWorkoutDuration();
+    getMuscleGroups();
+    })
+</script>  --}}
