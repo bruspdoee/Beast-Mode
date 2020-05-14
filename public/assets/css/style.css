@@ -21,6 +21,17 @@ body {
     color: white;
 }
 
+.timer-container {
+    background-color: black;
+    font-size: 20px;
+    color: white;
+    border: white solid 1px;
+    width: 300px;
+    padding: 0%;
+    margin: auto;
+    padding-top: 1%;
+}
+
 #submitWorkoutParameters {
     width: 750px;
     height: 50px;
