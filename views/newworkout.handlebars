@@ -3,10 +3,13 @@
 
 
 {{#each workouts}}
+      {{#each this}}
         <ol>
-       <p>Exercise: {{this.exercise}}</p>
-       <p>Sets: {{this.sets}}</p>
+       <p>Exercise: {{this.dataValues.exercise}}</p>
+       <p>Sets: {{this.dataValues.sets}}</p>
+       <p>----------</p>
        </ol>
         
       {{/each}}
+{{/each}}
 </div>
