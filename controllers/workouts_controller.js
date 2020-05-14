@@ -43,7 +43,7 @@ router.post("/newworkout", function(req, res) {
 
             res.render("newworkout", hbsObject);
         })
-        .catch (e => {throw e})
+        .catch (e => {console.log(e)})
 
 });
 
