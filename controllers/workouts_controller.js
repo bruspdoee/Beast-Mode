@@ -3,9 +3,10 @@ var express = require("express");
 var router = express.Router();
 var connection = require("../config/connection");
 var cTable = require('console.table');
-var bodyParser = require("body-parser");
-router.use(bodyParser.urlencoded({ extended: false }))
-router.use(bodyParser.json());
+const db = require("../models");
+// var bodyParser = require("body-parser");
+// router.use(bodyParser.urlencoded({ extended: false }))
+// router.use(bodyParser.json());
 
 
 
@@ -29,22 +30,37 @@ router.post("/newworkout", function(req, res) {
 
     var workoutArray = [];
 
-
-    for (var i = 0; i < muscleGroupArray.length; i++) {
-
-        connection.query(`SELECT * FROM workouts_db.workouttable WHERE ?`, { minor_muscle: muscleGroupArray[i] }, function(err, exerciseData) {
-            if (err) throw err;
-
-            workoutArray.push(exerciseData)
-                // var hbsObject = {
-                //     workouts: exerciseData
-                // };
-                // console.log("----------- HERE ------------");
-            console.log("------ Iteration -----");
-            console.log(workoutArray);
+    db.Exercise.findAll({
+            where: {
+                minor_muscle: muscleGroupArray[0]
+            }
         })
-    }
+        .then(function(result) {
+            console.log(result);
+            var hbsObject = {
+                workouts: JSON.parse(result)
+            };
+            res.render("newworkout", hbsObject);
+            // res.json({
+            //     success: true,
+            // });
+        });
 
+
+    // for (var i = 0; i < muscleGroupArray.length; i++) {
+
+    //     connection.query(`SELECT * FROM workouts_db.workouttable WHERE ?`, { minor_muscle: muscleGroupArray[i] }, function(err, exerciseData) {
+    //         if (err) throw err;
+
+    //         workoutArray.push(exerciseData)
+    // var hbsObject = {
+    //     workouts: exerciseData
+    // };
+    // console.log("----------- HERE ------------");
+    // console.log("------ Iteration -----");
+    // console.log(workoutArray);
+    //     })
+    // }
     // res.render("newworkout", hbsObject);
 
 });
