@@ -71,15 +71,15 @@ router.get("/api/exercises", function(req, res) {
 
     // workoutParameters.getWorkoutDuration();
 
-    connection.query(`SELECT * FROM workouts_db.workouttable WHERE minor_muscle = "bicep"`, function(err, exerciseData) {
-        if (err) throw err;
-        console.table(exerciseData);
-        var hbsObject = {
-            workouts: exerciseData
-        };
+    // connection.query(`SELECT * FROM workouts_db.workouttable WHERE minor_muscle = "bicep"`, function(err, exerciseData) {
+    //     if (err) throw err;
+    //     console.table(exerciseData);
+    //     var hbsObject = {
+    //         workouts: exerciseData
+    //     };
 
-        res.render("new_workout", hbsObject);
-    })
+    //     res.render("new_workout", hbsObject);
+    // })
 });
 
 
