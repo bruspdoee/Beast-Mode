@@ -42,7 +42,8 @@ router.post("/newworkout", function(req, res) {
             console.log(JSON.stringify(resultArray, null, 2));
 
             res.render("newworkout", hbsObject);
-        });
+        })
+        .catch (e => {throw e})
 
 });
 
