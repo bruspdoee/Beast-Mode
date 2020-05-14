@@ -3,9 +3,10 @@ var express = require("express");
 var router = express.Router();
 var connection = require("../config/connection");
 var cTable = require('console.table');
-var bodyParser = require("body-parser");
-router.use(bodyParser.urlencoded({ extended: false }))
-router.use(bodyParser.json());
+const db = require("../models");
+// var bodyParser = require("body-parser");
+// router.use(bodyParser.urlencoded({ extended: false }))
+// router.use(bodyParser.json());
 
 
 
@@ -16,36 +17,32 @@ router.get("/", function(req, res) {
 
 router.post("/newworkout", function(req, res) {
     var workoutParameters = req.body;
-    console.log("--------------");
-    console.log(workoutParameters);
     var workoutDuration = workoutParameters.workoutDuration;
-
-    console.log("-- Duration --");
-    console.log(workoutDuration);
-
     var muscleGroupArray = workoutParameters.muscleGroup;
-    console.log("-- Muscles --");
-    console.log(muscleGroupArray);
 
-    var workoutArray = [];
-
+    var promisesArray = [];
 
     for (var i = 0; i < muscleGroupArray.length; i++) {
+        promisesArray.push(db.Exercise.findAll({
+            where: {
+                minor_muscle: muscleGroupArray[i]
+            }
+        }))
+    };
 
-        connection.query(`SELECT * FROM workouts_db.workouttable WHERE ?`, { minor_muscle: muscleGroupArray[i] }, function(err, exerciseData) {
-            if (err) throw err;
+    Promise.all(promisesArray)
+        .then(function(resultArray) {
+            // console.log(resultArray);
+            var hbsObject = {
+                workouts: resultArray
+            };
+            // console.log("----- HBS OBJECT -----")
+            // console.log(hbsObject);
+            console.log("----- OUTSIDE FOR LOOP -----")
+            console.log(JSON.stringify(resultArray, null, 2));
 
-            workoutArray.push(exerciseData)
-                // var hbsObject = {
-                //     workouts: exerciseData
-                // };
-                // console.log("----------- HERE ------------");
-            console.log("------ Iteration -----");
-            console.log(workoutArray);
-        })
-    }
-
-    // res.render("newworkout", hbsObject);
+            res.render("newworkout", hbsObject);
+        });
 
 });
 
