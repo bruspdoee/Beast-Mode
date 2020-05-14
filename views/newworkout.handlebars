@@ -1,5 +1,5 @@
-<div class="container">
-      <p id="timer">Timer: {{duration}}</p>
+<div class="container timer-container">
+      <p id="timer"></p>
 </div>
 <br>
 
@@ -10,6 +10,7 @@
 {{#each workouts}}
       {{#each this}}
         <ol>
+      <p>Muscle Targeted: {{this.dataValues.minor_muscle}}</p>
        <p>Exercise: {{this.dataValues.exercise}}</p>
        <p>Sets: {{this.dataValues.sets}}</p>
        <p>----------</p>
@@ -18,3 +19,19 @@
       {{/each}}
 {{/each}}
 </div>
+
+<script>
+var timerCount = {{duration}} * 1000;
+console.log(timerCount);
+alert(`You have {{duration}} minutes to BEAST this workout.  Click Ok when ready`);
+
+var timeInterval = setInterval(function() {
+timerCount--;
+$("#timer").text("Time Left: " + (timerCount / 1000).toFixed(0) + " minutes");
+if (timerCount === 0 || timerCount < 0) {
+      clearInterval(timerDuration);
+      alert("KILLED IT.  Well done.");
+}
+}, 1000);
+
+</script>
