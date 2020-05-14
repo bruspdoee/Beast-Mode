@@ -1,6 +1,18 @@
 <form method="POST" action="/newworkout">
+
+<div class="container title-container">
+<h1 class="ml1">
+  <span class="text-wrapper">
+    <span class="line line1"></span>
+    <span class="letters">Beast Mode!</span>
+    <span class="line line2"></span>
+  </span>
+</h1>
+</div>
+<br>
+
 <div class="container">
-    <h3>How Long Do You Want To <span class="text-danger">BEAST!</span> For?</h3>
+    <h3>How Long Do You Want To <span class="beast-text">BEAST!</span> For?</h3>
     <label class="radio-inline"><input type="radio" name="workoutDuration" value="5">5 minutes</label>
     <label class="radio-inline"><input type="radio" name="workoutDuration" value="10">10 minutes</label>
     <label class="radio-inline"><input type="radio" name="workoutDuration" value="15">15 minutes</label>
@@ -15,7 +27,7 @@
 <br>
     
     <div class="container muscle-group-selection">
-        <h3>Select Muscle Groups to <span class="text-danger">BEAST!</span></h3>
+        <h3>Select Muscle Groups to <span class="beast-text">BEAST!</span></h3>
         <br>
         <h5>Upper Body</h5>
         <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="shoulders">Shoulders</label>
@@ -40,15 +52,61 @@
 
 <br>
   
-    <div class="container">
+    {{!-- <div class="container"> --}}
         <div class="row">
             <div class="col text-center">
-                <button type="submit" id="submitWorkoutParameters" class="bg-danger text-white btn-lg" value="FIRE UP!">FIRE UP!</button>
+                <button type="submit" id="submitWorkoutParameters" value="FIRE UP!">FIRE UP!</button>
             </div>
         </div>
-    </div>
+    {{!-- </div> --}}
 
 </form>
 
 
+<script>
+{{!-- This is the script for the scrolling text --}}
+var textWrapper = document.querySelector('.ml1 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml1 .letter',
+    scale: [0.3,1],
+    opacity: [0,1],
+    translateZ: 0,
+    easing: "easeOutExpo",
+    duration: 600,
+    delay: (el, i) => 70 * (i+1)
+  }).add({
+    targets: '.ml1 .line',
+    scaleX: [0,1],
+    opacity: [0.5,1],
+    easing: "easeOutExpo",
+    duration: 700,
+    offset: '-=875',
+    delay: (el, i, l) => 80 * (l - i)
+  }).add({
+    targets: '.ml1',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+
+{{!-- This is the script for the greeting --}}
+var today = new Date();
+var hourNow = today.getHours();
+var greeting;
+if (hourNow > 18) {
+    greeting = 'Good evening!';
+} else if (hourNow > 12) {
+    greeting = 'Good afternoon!';
+} else if (hourNow > 0) {
+    greeting = 'Good morning!';
+} else {
+    greeting = 'Welcome!';
+}
+document.write('<h3>' + greeting + '</h3>');
+
+
+</script>
