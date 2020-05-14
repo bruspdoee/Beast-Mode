@@ -1,23 +1,22 @@
+$("#submitWorkoutParameters").on("click", function(event) {
+    event.preventDefault();
+    console.log("FIRE UP!");
+    var workoutDuration = parseInt($('input[name="workoutDuration"]:checked').serializeArray()[0].value);
+    var muscleGroups = $('input[name="muscleGroup"]:checked').serializeArray().map(ele => ele.value);
+
 var workoutParameters = {
-   
-    getWorkoutDuration: function(cb) { 
-        var workoutDuration = parseInt($('input[name="workoutDuration"]:checked').serializeArray()[0].value);
-        console.log("Workout Duration: " + workoutDuration);
-        alert("Workout Duration: " + workoutDuration);
-        cb(workoutDuration);
-    }, 
-    getMuscleGroups: function(cb) {
-        var muscleGroups = $('input[name="muscleGroup"]:checked').serializeArray().map(ele => ele.value);
-        console.log(muscleGroups);
-        alert("Muscle Groups to BEAST: " + muscleGroups);
-        cb(muscleGroups);
-    }    
+    duration: workoutDuration,
+    muscles: muscleGroups
 }
 
-// $("#submitWorkoutParameters").on("click", function(event) {
-//     console.log("FIRE UP!");
-//     getWorkoutDuration();
-//     getMuscleGroups();
-// })
+$.post("/newworkout", workoutParameters, function(data) {
+    if (data) {
+        console.log(workoutParameters);
+        window.location.href = "../newworkout";
+    } else {
+        console.log("Please check off parameters")
+        }
+    })
+})
 
 // module.exports = workoutParameters;

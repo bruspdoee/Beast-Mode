@@ -1,3 +1,4 @@
+<form method="POST" action="/newworkout">
 <div class="container">
     <h3>How Long Do You Want To <span class="text-danger">BEAST!</span> For?</h3>
     <label class="radio-inline"><input type="radio" name="workoutDuration" value="5">5 minutes</label>
@@ -12,6 +13,7 @@
     <label class="radio-inline"><input type="radio" name="workoutDuration" value="90">1 hour 30 minutes</label>
 </div>
 <br>
+    
     <div class="container muscle-group-selection">
         <h3>Select Muscle Groups to <span class="text-danger">BEAST!</span></h3>
         <br>
@@ -36,17 +38,17 @@
                    
     </div>
 
-    <br>
+<br>
+  
     <div class="container">
         <div class="row">
-<div class="col text-center">
-    <input id="submitWorkoutParameters" class="bg-danger text-white btn-lg" type="submit" value="FIRE UP!">
-</div>
+            <div class="col text-center">
+                <button type="submit" id="submitWorkoutParameters" class="bg-danger text-white btn-lg" value="FIRE UP!">FIRE UP!</button>
+            </div>
         </div>
     </div>
 
+</form>
 
-
-</body>
 
 
