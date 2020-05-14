@@ -1,9 +1,9 @@
 {
     "development": {
-        "username": "root",
-        "password": "SDY5010j",
-        "database": "workouts_db",
-        "host": "127.0.0.1",
+        "username": "xhy0vackiobpy1l4",
+        "password": "mvlfzowfzui7wx18",
+        "database": "h4jo2seufcubom2h",
+        "host": "wm63be5w8m7gs25a.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
         "port": 3306,
         "dialect": "mysql"
     },
