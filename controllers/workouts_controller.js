@@ -34,7 +34,8 @@ router.post("/newworkout", function(req, res) {
         .then(function(resultArray) {
             // console.log(resultArray);
             var hbsObject = {
-                workouts: resultArray
+                workouts: resultArray,
+                duration: workoutDuration
             };
             // console.log("----- HBS OBJECT -----")
             // console.log(hbsObject);
@@ -43,7 +44,7 @@ router.post("/newworkout", function(req, res) {
 
             res.render("newworkout", hbsObject);
         })
-        .catch (e => {console.log(e)})
+        .catch(e => { console.log(e) })
 
 });
 
