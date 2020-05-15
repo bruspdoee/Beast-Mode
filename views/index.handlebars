@@ -1,10 +1,11 @@
 <form method="POST" action="/newworkout">
 
 <div class="container title-container">
+  <script src="js/script.js"></script>
 <h1 class="ml1">
   <span class="text-wrapper">
     <span class="line line1"></span>
-    <span class="letters">Beast Mode!</span>
+    <span class="letter" id="beast-title-text">Beast Mode!</span>
     <span class="line line2"></span>
   </span>
 </h1>
@@ -32,19 +33,19 @@
         <h5>Upper Body</h5>
         <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="shoulders">Shoulders</label>
         <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="chest">Chest</label>
-        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="biceps">Biceps</label>
-        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="triceps">Triceps</label>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="bicep">Biceps</label>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="tricep">Triceps</label>
         
         <br><br>
         <h5>Core</h5>
-        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="obliques">Obliques</label>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="oblique">Obliques</label>
         
         <br><br>
         <h5>Lower Body</h5>
         <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="hamstrings">Hamstrings</label>
         <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="glutes">Glutes</label>
-        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="outerThigh">Outer Thigh</label>
-        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="innerThigh">Inner Thigh</label>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="outer Thigh">Outer Thigh</label>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="inner Thigh">Inner Thigh</label>
         <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="quads">Quads</label>
         <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="calves">Calves</label>
                    
@@ -92,21 +93,6 @@ anime.timeline({loop: true})
     easing: "easeOutExpo",
     delay: 1000
   });
-
-{{!-- This is the script for the greeting --}}
-var today = new Date();
-var hourNow = today.getHours();
-var greeting;
-if (hourNow > 18) {
-    greeting = 'Good evening!';
-} else if (hourNow > 12) {
-    greeting = 'Good afternoon!';
-} else if (hourNow > 0) {
-    greeting = 'Good morning!';
-} else {
-    greeting = 'Welcome!';
-}
-document.write('<h3>' + greeting + '</h3>');
 
 
 </script>
