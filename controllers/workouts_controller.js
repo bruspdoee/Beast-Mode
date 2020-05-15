@@ -4,6 +4,8 @@ var router = express.Router();
 var connection = require("../config/connection");
 var cTable = require('console.table');
 const db = require("../models");
+
+
 // var bodyParser = require("body-parser");
 // router.use(bodyParser.urlencoded({ extended: false }))
 // router.use(bodyParser.json());
@@ -22,6 +24,9 @@ router.post("/newworkout", function(req, res) {
 
     var promisesArray = [];
 
+    var numOfWorkouts = workoutDuration / 5;
+
+
     for (var i = 0; i < muscleGroupArray.length; i++) {
         promisesArray.push(db.Exercise.findAll({
             where: {
@@ -32,15 +37,35 @@ router.post("/newworkout", function(req, res) {
 
     Promise.all(promisesArray)
         .then(function(resultArray) {
+
+            // reducing all arrays into single array starting at 0
+            // var totalNumberOfExercises = resultArray.reduce((total, nestedMuscle) => total += nestedMuscle.length, 0);
+
+            spreadArray = [];
+            resultArray.forEach(nestedMuscle => spreadArray.push(...nestedMuscle));
+            var totalNumberOfExercises = spreadArray.length;
+            console.log(totalNumberOfExercises);
+
+            var generatedWorkout = [];
+
+            for (var i = 0; i < numOfWorkouts; i++) {
+                console.log(i);
+                generatedWorkout.push(spreadArray[Math.floor(Math.random() * totalNumberOfExercises)]);
+            }
+            console.log(generatedWorkout);
+            // generatedWorkout.map(ele => {
+            //     var regExp = /\(([^)]+)\)/;
+            //     ele.example = regExp.exec(ele.example)[0]
+            // })
+
             // console.log(resultArray);
             var hbsObject = {
-                workouts: resultArray,
+                workouts: generatedWorkout,
                 duration: workoutDuration
             };
-            // console.log("----- HBS OBJECT -----")
-            // console.log(hbsObject);
-            console.log("----- OUTSIDE FOR LOOP -----")
-            console.log(JSON.stringify(resultArray, null, 2));
+
+            // console.log("----- OUTSIDE FOR LOOP -----")
+            // console.log(JSON.stringify(resultArray, null, 2));
 
             res.render("newworkout", hbsObject);
         })

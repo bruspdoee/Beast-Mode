@@ -8,15 +8,17 @@
 
 
 {{#each workouts}}
-      {{#each this}}
+      {{!-- {{#each this}} --}}
         <ol>
       <p>Muscle Targeted: {{this.dataValues.minor_muscle}}</p>
-       <p>Exercise: {{this.dataValues.exercise}}</p>
+       <p id="{{this.dataValues.example}}">Exercise: {{this.dataValues.exercise}}</p>
        <p>Sets: {{this.dataValues.sets}}</p>
+       <img id="example-pic" src="{{this.dataValues.example}}">
+       
        <p>----------</p>
        </ol>
         
-      {{/each}}
+      {{!-- {{/each}} --}}
 {{/each}}
 </div>
 
