@@ -62,14 +62,29 @@
         }
         
         #submitWorkoutParameters {
-            width: 750px;
+            /* width: 750px;
             height: 50px;
             color: white;
             border: white 3px solid;
             background-color: black;
             font-size: 24px;
             font-weight: bold;
+            margin: auto; */
+            border: white 3px solid;
+            color: white;
+            background-color: black;
+            font-size: 24px;
+            font-weight: bold;
+            height: 50px;
+            margin: auto;
+            width: 80%;
         }
+        @media only screen and (min-width: 768px) {
+            .button {
+                width: 750px;
+            }
+        }
+    
         
         .ml1 {
             font-weight: 900;
