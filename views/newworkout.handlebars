@@ -6,33 +6,43 @@
 <div class="container workout-holder">
 
 
-
+<ol>
 {{#each workouts}}
-      {{!-- {{#each this}} --}}
-        <ol>
+      
+        <li class="workout-list-item">
       <p>Muscle Targeted: {{this.dataValues.minor_muscle}}</p>
        <p id="{{this.dataValues.example}}">Exercise: {{this.dataValues.exercise}}</p>
        <p>Sets: {{this.dataValues.sets}}</p>
        <img id="example-pic" src="{{this.dataValues.example}}">
        
-       <p>----------</p>
-       </ol>
+       <p>----------------------------------------------------------------------------------------------------</p>
+       </li>
         
-      {{!-- {{/each}} --}}
+      
 {{/each}}
+</ol>
 </div>
 
 <script>
-var timerCount = {{duration}} * 1000;
+{{!-- This is the script for the timer --}}
+
+var timerCount = {{duration}} * 60000;
+var minuteCount = {{duration}} - 1;
+var secondCount = 60;
 console.log(timerCount);
 alert(`You have {{duration}} minutes to BEAST this workout.  Click Ok when ready`);
 
 var timeInterval = setInterval(function() {
+secondCount--;
 timerCount--;
-$("#timer").text("Time Left: " + (timerCount / 1000).toFixed(0) + " minutes");
+$("#timer").text("Time Left: " + minuteCount + " minutes | " + secondCount + " seconds");
 if (timerCount === 0 || timerCount < 0) {
       clearInterval(timerDuration);
       alert("KILLED IT.  Well done.");
+}
+if (secondCount === 0 || secondCount <0) {
+      secondCount = 60;
+      minuteCount--;
 }
 }, 1000);
 

@@ -5,13 +5,6 @@ var connection = require("../config/connection");
 var cTable = require('console.table');
 const db = require("../models");
 
-
-// var bodyParser = require("body-parser");
-// router.use(bodyParser.urlencoded({ extended: false }))
-// router.use(bodyParser.json());
-
-
-
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
     res.render("index");
@@ -38,9 +31,6 @@ router.post("/newworkout", function(req, res) {
     Promise.all(promisesArray)
         .then(function(resultArray) {
 
-            // reducing all arrays into single array starting at 0
-            // var totalNumberOfExercises = resultArray.reduce((total, nestedMuscle) => total += nestedMuscle.length, 0);
-
             spreadArray = [];
             resultArray.forEach(nestedMuscle => spreadArray.push(...nestedMuscle));
             var totalNumberOfExercises = spreadArray.length;
@@ -52,20 +42,11 @@ router.post("/newworkout", function(req, res) {
                 console.log(i);
                 generatedWorkout.push(spreadArray[Math.floor(Math.random() * totalNumberOfExercises)]);
             }
-            console.log(generatedWorkout);
-            // generatedWorkout.map(ele => {
-            //     var regExp = /\(([^)]+)\)/;
-            //     ele.example = regExp.exec(ele.example)[0]
-            // })
 
-            // console.log(resultArray);
             var hbsObject = {
                 workouts: generatedWorkout,
                 duration: workoutDuration
             };
-
-            // console.log("----- OUTSIDE FOR LOOP -----")
-            // console.log(JSON.stringify(resultArray, null, 2));
 
             res.render("newworkout", hbsObject);
         })
@@ -84,30 +65,6 @@ router.get("/workout_history", function(req, res) {
 // router.get("/newworkout", function(req, res) {
 //     res.render("newworkout");
 //     });
-
-router.get("/api/exercises", function(req, res) {
-    //   var workoutParameters = req.body;
-    //   console.log("-- request body --");
-    //   console.log(workoutParameters);
-    //   res.json(workoutParameters)
-
-    // need to get front end form functionality to pass variables here
-    // need to seqeulize this sht
-    // need to dynamically create algo for workout
-
-    // workoutParameters.getWorkoutDuration();
-
-    connection.query(`SELECT * FROM workouts_db.workouttable WHERE minor_muscle = "bicep"`, function(err, exerciseData) {
-        if (err) throw err;
-        console.table(exerciseData);
-        var hbsObject = {
-            workouts: exerciseData
-        };
-
-        res.render("new_workout", hbsObject);
-    })
-});
-
 
 // Export routes for server.js to use.
 module.exports = router;
