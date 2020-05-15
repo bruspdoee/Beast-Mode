@@ -2,7 +2,7 @@ var express = require("express");
 
 var router = express.Router();
 var connection = require("../config/connection");
-var cTable = require('console.table');
+//var cTable = require('console.table');
 const db = require("../models");
 // var bodyParser = require("body-parser");
 // router.use(bodyParser.urlencoded({ extended: false }))

@@ -1,7 +1,7 @@
 {
     "development": {
         "username": "root",
-        "password": "SDY5010j",
+        "password": "ja135786",
         "database": "workouts_db",
         "host": "127.0.0.1",
         "port": 3306,
