@@ -9,7 +9,7 @@ if (process.env.JAWSDB_URL) {
         host: "localhost",
         user: "root",
         port: 3306,
-        password: "Itsbrus16!",
+        password: "SDY5010j",
         database: "workouts_db"
     });
 };

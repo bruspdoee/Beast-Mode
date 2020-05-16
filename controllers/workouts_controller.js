@@ -16,8 +16,8 @@ router.post("/newworkout", function(req, res) {
     var muscleGroupArray = workoutParameters.muscleGroup;
 
     var promisesArray = [];
-
-    var numOfWorkouts = workoutDuration / 5;
+    var timePerExercise = 1;
+    var numOfWorkouts = workoutDuration / timePerExercise;
 
 
     for (var i = 0; i < muscleGroupArray.length; i++) {
@@ -45,7 +45,8 @@ router.post("/newworkout", function(req, res) {
 
             var hbsObject = {
                 workouts: generatedWorkout,
-                duration: workoutDuration
+                duration: workoutDuration,
+                timePerExercise: timePerExercise
             };
 
             res.render("newworkout", hbsObject);
