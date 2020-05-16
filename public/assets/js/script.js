@@ -11,7 +11,7 @@ if (hourNow > 18) {
     greeting = 'Welcome!';
 }
 document.write(`
-<div class="container title-container">
+<div class="container greeting-container">
 <p class = "ml1">
         <span class = "text-wrapper">
         <span class = "letters" id="greeting" > ${greeting}

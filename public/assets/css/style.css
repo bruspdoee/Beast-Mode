@@ -1,4 +1,10 @@
         .container {
+            /* text-align: center;
+            background-color: #cccccc;
+            padding: 2%; */
+        }
+        
+        .index-container {
             text-align: center;
             background-color: #cccccc;
             padding: 2%;
@@ -6,6 +12,13 @@
         
         .title-container {
             background-color: transparent;
+            text-align: center;
+        }
+        
+        .greeting-container {
+            background-color: transparent;
+            text-align: center;
+            padding-top: 15px;
         }
         
         .navbar {
@@ -21,7 +34,10 @@
         }
         
         .workout-holder {
-            color: white;
+            /* color: white; */
+            text-align: center;
+            background-color: #cccccc;
+            padding: 2%;
         }
         
         #greeting {
@@ -55,10 +71,11 @@
             font-size: 20px;
             color: white;
             border: white solid 1px;
-            width: 300px;
+            width: 350px;
             padding: 0%;
             margin: auto;
             padding-top: 1%;
+            text-align: center;
         }
         
         #submitWorkoutParameters {
@@ -77,14 +94,14 @@
             font-weight: bold;
             height: 50px;
             margin: auto;
-            width: 80%;
+            width: 60%;
         }
+        
         @media only screen and (min-width: 768px) {
             .button {
                 width: 750px;
             }
         }
-    
         
         .ml1 {
             font-weight: 900;
@@ -152,6 +169,11 @@
         #example-pic {
             height: 180px;
             width: 180px;
+        }
+        
+        .workout-list-item {
+            font-size: 20px;
+            color: black;
         }
         /* formatting for the about page here */
         
