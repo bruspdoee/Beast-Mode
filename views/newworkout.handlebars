@@ -15,7 +15,7 @@
        <p>Sets: {{this.dataValues.sets}}</p>
        <img id="example-pic" src="{{this.dataValues.example}}">
        
-       <p>----------------------------------------------------------------------------------------------------</p>
+       <p>-----------------------------------------------------------------------------------------------</p>
        </li>
         
       
@@ -29,20 +29,27 @@
 var timerCount = {{duration}} * 60000;
 var minuteCount = {{duration}} - 1;
 var secondCount = 60;
+var minutesElapsed = 0;
 console.log(timerCount);
 alert(`You have {{duration}} minutes to BEAST this workout.  Click Ok when ready`);
 
 var timeInterval = setInterval(function() {
 secondCount--;
 timerCount--;
+
 $("#timer").text("Time Left: " + minuteCount + " minutes | " + secondCount + " seconds");
-if (timerCount === 0 || timerCount < 0) {
+if (minuteCount === 0) {
       clearInterval(timerDuration);
       alert("KILLED IT.  Well done.");
 }
 if (secondCount === 0 || secondCount <0) {
       secondCount = 60;
       minuteCount--;
+      minutesElapsed++;
+}
+if (minutesElapsed === {{timePerExercise}}) {
+minutesElapsed = 0;
+$(".workout-list-item:first").remove();
 }
 }, 1000);
 
