@@ -1,26 +1,28 @@
 <div class="container timer-container">
-      <p id="timer"></p>
+      <p id="timer">Click to Beast!</p>
 </div>
 <br>
 
-<div class="container workout-holder">
+<div class="container">
 
 
-<ol>
-{{#each workouts}}
-      
-        <li class="workout-list-item">
-      <p>Muscle Targeted: {{this.dataValues.minor_muscle}}</p>
-       <p id="{{this.dataValues.example}}">Exercise: {{this.dataValues.exercise}}</p>
-       <p>Sets: {{this.dataValues.sets}}</p>
-       <img id="example-pic" src="{{this.dataValues.example}}">
+<div class="flex-container">
+     
+      {{#each workouts}}
+      <div class="exercise-card">
+      <div class="workout-list-item">
+      <p id="muscle-title">{{this.dataValues.minor_muscle}}</p>
+      <img class="example-image example-pic" src="{{this.dataValues.example}}">
+      <p id="{{this.dataValues.example}}" class="exercise-name">{{this.dataValues.exercise}}</p>
+      <p id="sets-title">{{this.dataValues.sets}}</p>
        
-       <p>-----------------------------------------------------------------------------------------------</p>
-       </li>
+       </div>
+        </div>
         
       
 {{/each}}
-</ol>
+</div>
+</div>
 </div>
 
 <script>
@@ -30,17 +32,20 @@ var timerCount = {{duration}} * 60000;
 var minuteCount = {{duration}} - 1;
 var secondCount = 60;
 var minutesElapsed = 0;
-console.log(timerCount);
-alert(`You have {{duration}} minutes to BEAST this workout.  Click Ok when ready`);
 
+
+$("#timer").on("click", function() {
 var timeInterval = setInterval(function() {
+$(".exercise-card:first").attr("id","first-exercise");
+$(".example-image:first").attr("id", "first-exercise-pic");
 secondCount--;
 timerCount--;
 
-$("#timer").text("Time Left: " + minuteCount + " minutes | " + secondCount + " seconds");
+$("#timer").text(minuteCount + " minutes | " + secondCount + " seconds");
 if (minuteCount === -1) {
       clearInterval(timeInterval);
       alert("KILLED IT.  Well done.");
+       window.location.href = "../index";
 } 
 if (secondCount === 0 || secondCount <0) {
       secondCount = 60;
@@ -49,8 +54,18 @@ if (secondCount === 0 || secondCount <0) {
 } 
 if (minutesElapsed === {{timePerExercise}}) {   
 minutesElapsed = 0;
-$(".workout-list-item:first").remove();
+$(".exercise-card:first").remove();
 }
 }, 1000);
+
+});
+
+
+
+
+
+
+
+
 
 </script>

@@ -10,6 +10,14 @@ router.get("/", function(req, res) {
     res.render("index");
 });
 
+router.get("/index", function(req, res) {
+    res.render("index");
+});
+
+router.get("/subscribe", function(req, res) {
+    res.render("subscribe");
+});
+
 router.post("/newworkout", function(req, res) {
     var workoutParameters = req.body;
     var workoutDuration = workoutParameters.workoutDuration;
