@@ -27,9 +27,57 @@
 </div>
 <br>
     
+    {{!-- Display on larger screen --}}
+    <div class="big-display">
     <div class="container index-container">
         <h3>Select Muscle Groups to <span class="beast-text">BEAST!</span></h3>
         <br>
+        
+        <div class="col-md-6 float-left">
+            <div class="col-md-6 left-muscle-list float-left" id="test">
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="neck" >Neck (sternocleidomastoid) </label>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="shoulders" >Traps (trapezius)</label>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="shoulders" >Shoulders (deltoids)</label>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="chest" >Chest (pectoralis)</label>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="bicep" >Biceps (biceps brachii)</label>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="bicep" >Forearm (brachioradialis)</label>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="abs" >Abs (rectus abdominis)</label>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="quads" >Quads (quadriceps)</label>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="calves" >Calves (gastrocnemius)</label>
+            </div>
+            <div class="col-md-6 man-image float-center">
+                <img src="/assets/images/imageMan.png" alt="man" style="float:left;width:100%;height:400px;">
+            </div>
+        </div>
+        <div class="col-md-6 float-left">
+            <div class="col-md-6"></div>
+            <div class="col-md-6 woman-image float-left">
+                <img src="/assets/images/imageWoman.png" alt="woman" style="float:right;width:250px;height:400px;">
+            </div>
+            <div class="col-md-6 right-muscle-list" id="test">
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="shoulders">Traps (trapezius)</label>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="tricep">Triceps (triceps brachii)</label>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="back">Lats (latissimus dorsi)</label>
+                <div class="filler-row-small"></div>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="back">Middle Back (rhomboids)</label>
+                <div class="filler-row-big"></div>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="back">Lower Back (Thoracolumbar)</label>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="glutes">Glutes (Gluteusmaximus)</label>
+                
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="quads">Quads (quadriceps)</label>
+                <div class="filler-row-small"></div>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="hamstrings">Hamstrings (biceps femoris)</label>
+                
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="calves">Calves (gastrocnemius)</label>
+            </div>
+        </div>
+        </div>
+      </div>
+        
+        
+        {{!-- Display on smaller screen --}}
+        <div class="small-display">
+          <div class="container index-container">
         <h5>Upper Body</h5>
         <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="shoulders">Shoulders</label>
         <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="chest">Chest</label>
@@ -48,18 +96,19 @@
         <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="inner Thigh">Inner Thigh</label>
         <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="quads">Quads</label>
         <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="calves">Calves</label>
-                   
+        </div>
+         </div>          
     </div>
 
 <br>
   
-    {{!-- <div class="container"> --}}
+    <div class="container">
         <div class="row">
             <div class="col text-center">
                 <button type="submit" id="submitWorkoutParameters" value="FIRE UP!">FIRE UP!</button>
             </div>
         </div>
-    {{!-- </div> --}}
+    </div>
 
 </form>
 
