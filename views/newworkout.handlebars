@@ -38,16 +38,16 @@ secondCount--;
 timerCount--;
 
 $("#timer").text("Time Left: " + minuteCount + " minutes | " + secondCount + " seconds");
-if (minuteCount === 0) {
-      clearInterval(timerDuration);
+if (minuteCount === -1) {
+      clearInterval(timeInterval);
       alert("KILLED IT.  Well done.");
-}
+} 
 if (secondCount === 0 || secondCount <0) {
       secondCount = 60;
       minuteCount--;
       minutesElapsed++;
-}
-if (minutesElapsed === {{timePerExercise}}) {
+} 
+if (minutesElapsed === {{timePerExercise}}) {   
 minutesElapsed = 0;
 $(".workout-list-item:first").remove();
 }
