@@ -2,7 +2,10 @@
     font-family: 'Gugi', cursive;
 }
 
-@media screen and (max-width: 576px) {
+
+/* For small screens */
+
+@media screen and (max-width: 1225px) {
     .big-display {
         display: none
     }
@@ -13,7 +16,10 @@
     }
 }
 
-@media screen and (min-width: 576px) {
+
+/* For big screens */
+
+@media screen and (min-width: 1225px) {
     .small-display {
         display: none
     }
@@ -300,15 +306,67 @@ body {
     padding-bottom: 10px;
     font-weight: bold;
     border: white solid 1px;
-    background-color: black;
+    /* background-color: black; */
     color: white;
     margin-top: 10px;
     max-width: 400px;
 }
 
+.group-name-container:hover {
+    transform: scale(1.2);
+}
+
 .group-member-image {
     max-height: 120px;
     border-radius: 20%;
+}
+
+.team-image-container {
+    height: 80%;
+    width: 80%;
+    background-size: cover;
+    margin: auto;
+    border-radius: 25px;
+}
+
+.abir-image-container {
+    background-image: url("/assets/images/abir.jpg");
+}
+
+.abir-image-container:hover {
+    background-image: url("/assets/images/ironman.jpg");
+}
+
+.austin-image-container {
+    background-image: url("/assets/images/austin.jpg");
+}
+
+.austin-image-container:hover {
+    background-image: url("/assets/images/thor.jpg");
+}
+
+.brus-image-container {
+    background-image: url("/assets/images/brus.png");
+}
+
+.brus-image-container:hover {
+    background-image: url("/assets/images/hulk.png");
+}
+
+.jervis-image-container {
+    background-image: url("/assets/images/jervis.jpg");
+}
+
+.jervis-image-container:hover {
+    background-image: url("/assets/images/rocket.jpg");
+}
+
+.muss-image-container {
+    background-image: url("/assets/images/muss.jpg");
+}
+
+.muss-image-container:hover {
+    background-image: url("/assets/images/baby-groot.jpg");
 }
 
 .col-md-6 {
@@ -339,7 +397,7 @@ body {
     margin-right: 0;
     margin-left: 0%;
     position: relative;
-    right: -60px;
+    right: -12%;
 }
 
 .right-muscle-list {
@@ -349,7 +407,7 @@ body {
     padding-right: 0;
     text-align: left;
     position: relative;
-    left: -95px;
+    left: -17%;
 }
 
 .man-image {
@@ -368,6 +426,9 @@ body {
     height: 5px;
 }
 
+
+/* Formatting for generated workout page */
+
 #first-exercise-pic {
     height: 300px;
     width: 300px;
@@ -381,13 +442,6 @@ body {
 .exercise-card:hover .example-pic {
     height: 150px;
     width: 150px
-}
-
-.group-name-container:hover .group-member-image {
-    height: 300px;
-    width: 300px;
-    object-fit: contain;
-    max-height: 400px;
 }
 
 
@@ -431,7 +485,7 @@ footer {
 }
 
 footer .footer-above {
-    margin-top: 100px;
+    margin-top: 150px;
     padding-top: 20px;
     text-align: center;
     background-image: url("https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
@@ -491,42 +545,41 @@ input[type=range] {
 input[type=range]::-webkit-slider-runnable-track {
     position: relative;
     height: 12px;
-    /* border: 1px solid #b2b2b2; */
-    /* border-radius: 5px; */
-    /* background-color: #e2e2e2; */
-    /* box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.1); */
 }
 
 input[type=range]::-webkit-slider-thumb {
     position: relative;
-    top: -3px;
-    width: 20px;
-    height: 20px;
-    border: 1px solid rgb(255, 0, 0);
+    top: -7px;
+    width: 25px;
+    height: 25px;
+    /* border: 1px solid rgb(255, 0, 0); */
     -webkit-appearance: none;
-    background-color: rgb(238, 12, 12);
+    background-color: transparent;
     /* box-shadow: inset 0 -1px 2px 0 rgba(0, 0, 0, 0.25); */
-    border-radius: 100%;
+    border-radius: 50%;
     cursor: pointer;
+    background-image: url("/assets/images/dumbbell-slider.png");
+    background-size: cover;
 }
 
 output {
     position: absolute;
     top: 30px;
-    /* right: 200px; */
     display: none;
     width: 50px;
     height: 24px;
-    /* border: 1px solid #e2e2e2; */
     background-color: transparent;
-    border-radius: 3px;
     color: rgb(255, 0, 0);
-    font-size: .8em;
-    line-height: 24px;
+    font-size: .9em;
+    font-weight: bold;
     text-align: center;
 }
 
 input[type=range]:active+output {
     display: block;
     transform: translateX(-50%);
+}
+
+::-webkit-slider-thumb:hover {
+    transform: scale(1.5);
 }
