@@ -24,12 +24,6 @@
     }
 }
 
-.container {
-    /* text-align: center;
-            background-color: #cccccc;
-            padding: 2%; */
-}
-
 img {
     object-fit: cover;
     border-radius: 15px !important;
@@ -382,23 +376,6 @@ body {
 
 .exercise-card:hover {
     transform: scale(1.2);
-    /* display: block;
-    bottom: 30px;
-    animation: mymove 0.8s linear;
-    -moz-animation: mymove 0.8s linear;
-    
-    -webkit-animation: mymove 0.8s linear;
-    
-    -o-animation: mymove 0.8s linear;
-    
-    -ms-animation: mymove 0.8s linear; */
-    /* display: inline-block;
-    vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    -webkit-transition-duration: 0.5s;
-    transition-duration: 0.5s; */
 }
 
 .exercise-card:hover .example-pic {
@@ -411,4 +388,145 @@ body {
     width: 300px;
     object-fit: contain;
     max-height: 400px;
+}
+
+
+/* Footer formatting */
+
+.btn-social {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    text-align: center;
+    font-size: 20px;
+    line-height: 45px;
+    align-content: center;
+}
+
+.fa-fw {
+    width: 10px;
+    text-align: center;
+}
+
+.fa {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    color: white;
+}
+
+footer {
+    display: block;
+    color: #fff;
+    text-align: center;
+}
+
+footer {
+    /* margin-bottom: 30px; */
+    text-align: center;
+}
+
+footer .footer-above {
+    margin-top: 100px;
+    padding-top: 20px;
+    text-align: center;
+    background-image: url("https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+    background-color: #cccccc;
+    background: linear-gradient(-45deg, #b17664, rgb(114, 124, 103), #7da8b8, #9dd3c7);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    max-width: 100%;
+    max-height: 100%;
+    border-top: black 1px solid;
+}
+
+.fa-instagram:before {
+    content: "\f16d";
+}
+
+.footer-above {
+    display: flex;
+}
+
+.blank-flex-container-1 {
+    flex: 1;
+}
+
+.blank-flex-container-2 {
+    flex: 1;
+}
+
+.footer-flex-container-main {
+    flex: 1;
+}
+
+#copyright-text {
+    font-size: 12px;
+}
+
+
+/* Formatting for second slide */
+
+.range-control {
+    position: relative;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 80%;
+    height: 25px;
+    /* background: #d3d3d3; */
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, rgb(255, 0, 0)), color-stop(0.15, rgb(255, 64, 30)), color-stop(0.3, rgb(255, 60, 34)), color-stop(0.45, rgb(255, 115, 34)), color-stop(0.6, rgb(255, 152, 34)), color-stop(1, rgb(255, 203, 34)));
+    background-image: gradient( linear, left top, right top, color-stop(0, rgb(255, 0, 0)), color-stop(0.15, rgb(255, 64, 30)), color-stop(0.3, rgb(255, 60, 34)), color-stop(0.45, rgb(255, 115, 34)), color-stop(0.6, rgb(255, 152, 34)), color-stop(1, rgb(255, 203, 34)));
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    position: relative;
+    height: 12px;
+    /* border: 1px solid #b2b2b2; */
+    /* border-radius: 5px; */
+    /* background-color: #e2e2e2; */
+    /* box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.1); */
+}
+
+input[type=range]::-webkit-slider-thumb {
+    position: relative;
+    top: -3px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgb(255, 0, 0);
+    -webkit-appearance: none;
+    background-color: rgb(238, 12, 12);
+    /* box-shadow: inset 0 -1px 2px 0 rgba(0, 0, 0, 0.25); */
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+output {
+    position: absolute;
+    top: 30px;
+    /* right: 200px; */
+    display: none;
+    width: 50px;
+    height: 24px;
+    /* border: 1px solid #e2e2e2; */
+    background-color: transparent;
+    border-radius: 3px;
+    color: rgb(255, 0, 0);
+    font-size: .8em;
+    line-height: 24px;
+    text-align: center;
+}
+
+input[type=range]:active+output {
+    display: block;
+    transform: translateX(-50%);
 }

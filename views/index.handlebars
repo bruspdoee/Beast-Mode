@@ -13,6 +13,15 @@
 <br>
 
 <div class="container index-container">
+<h3>How Long Do You Want To <span class="beast-text">BEAST!</span> For?</h3>
+<div class="range-control">
+    <input id="inputRange" name="workoutDuration" type="range" min="5" max="120" step="1" value="30" data-thumbwidth="20">
+    <output name="rangeVal"></output>
+  </div>
+</div>
+
+
+{{!-- <div class="container index-container">
     <h3>How Long Do You Want To <span class="beast-text">BEAST!</span> For?</h3>
     <label class="radio-inline"><input type="radio" name="workoutDuration" value="5">5 minutes</label>
     <label class="radio-inline"><input type="radio" name="workoutDuration" value="10">10 minutes</label>
@@ -24,7 +33,7 @@
     <label class="radio-inline"><input type="radio" name="workoutDuration" value="60">60 minutes</label>
     <label class="radio-inline"><input type="radio" name="workoutDuration" value="75">1 hour 15 minutes</label>
     <label class="radio-inline"><input type="radio" name="workoutDuration" value="90">1 hour 30 minutes</label>
-</div>
+</div> --}}
 <br>
     
     {{!-- Display on larger screen --}}
@@ -77,6 +86,7 @@
         
         {{!-- Display on smaller screen --}}
         <div class="small-display">
+                  <h3>Select Muscle Groups to <span class="beast-text">BEAST!</span></h3>
           <div class="container index-container">
         <h5>Upper Body</h5>
         <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="shoulders">Shoulders</label>
@@ -143,5 +153,26 @@ anime.timeline({loop: true})
     delay: 1000
   });
 
+
+{{!-- Script for slider --}}
+$('input[type="range"]').on('input', function() {
+
+  var control = $(this),
+    controlMin = control.attr('min'),
+    controlMax = control.attr('max'),
+    controlVal = control.val(),
+    controlThumbWidth = control.data('thumbwidth');
+
+  var range = controlMax - controlMin;
+  
+  var position = ((controlVal - controlMin) / range) * 100;
+  var positionOffset = Math.round(controlThumbWidth * position / 100) - (controlThumbWidth / 2);
+  var output = control.next('output');
+  
+  output
+    .css('left', 'calc(' + position + '% - ' + positionOffset + 'px)')
+    .text(controlVal);
+
+});
 
 </script>
