@@ -298,8 +298,8 @@ body {
 }
 
 .group-name-container {
-    flex-basis: 15%;
-    max-height: 400px;
+    /* flex-basis: 15%; */
+    height: 200px;
     /* background-color: tomato; */
     text-align: center;
     padding-top: 0.5rem;
@@ -309,7 +309,7 @@ body {
     /* background-color: black; */
     color: white;
     margin-top: 10px;
-    max-width: 400px;
+    width: 200px;
 }
 
 .group-name-container:hover {
@@ -367,6 +367,10 @@ body {
 
 .muss-image-container:hover {
     background-image: url("/assets/images/baby-groot.jpg");
+}
+
+.marshawn-image-container {
+    background-image: url("https://media.giphy.com/media/PQohNKbHCitdS/giphy.gif");
 }
 
 .col-md-6 {
