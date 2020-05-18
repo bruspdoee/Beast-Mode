@@ -23,3 +23,9 @@ Run the following command to install:
 ```   
 nodemon server.js
 ```   
+
+# Live Application
+Go to the following URL:
+```   
+point-of-s.herokuapp.com
+```   
